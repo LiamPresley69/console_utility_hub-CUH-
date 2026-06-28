@@ -1,5 +1,6 @@
 # Console Utility Hub
 
+## Version 1.0
 This is a small C++ project I built while learning the language.
 
 Instead of creating a bunch of separate programs, I thought it'd be more fun to combine them into one menu-driven application. The idea was to have a place where I could keep adding small utilities as I learned new concepts.
@@ -51,3 +52,11 @@ Some ideas I have are:
 * Cleaner user interface
 
 ## Thanks for checking it out! :)
+
+## Version 1.1 
+
+* Added more utilities- BMI calculator & stopwatch 
+* Improved the menu 
+* Minor UI improvements.
+
+----------------------------------------------------------------
