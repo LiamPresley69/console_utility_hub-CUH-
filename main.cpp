@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main()
 
     int choice = 0;
 
-    while (choice != 4)
+    while (choice != 6)
     {
         cout << "\n==============================\n";
         cout << "     Console Utility Hub\n";
@@ -18,7 +19,9 @@ int main()
         cout << "1. Calculator\n";
         cout << "2. Unit Converter\n";
         cout << "3. Number Guessing Game\n";
-        cout << "4. Exit\n";
+        cout << "4. BMI Calculator\n";
+        cout << "5. Stopwatch\n";
+        cout << "6. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -224,6 +227,65 @@ int main()
             }
         }
         else if (choice == 4)
+        {
+            double weight;
+            double height;
+            double bmi;
+
+            cout << "\n--- BMI Calculator ---\n";
+            cout << "Enter your weight in kilograms: ";
+            cin >> weight;
+
+            cout << "Enter your height in meters: ";
+            cin >> height;
+
+            if (weight <= 0 || height <= 0)
+            {
+                cout << "Weight and height should be greater than zero." << endl;
+            }
+            else
+            {
+                bmi = weight / (height * height);
+
+                cout << "Your BMI is: " << bmi << endl;
+
+                if (bmi < 18.5)
+                {
+                    cout << "Category: Underweight" << endl;
+                }
+                else if (bmi < 25)
+                {
+                    cout << "Category: Normal weight" << endl;
+                }
+                else if (bmi < 30)
+                {
+                    cout << "Category: Overweight" << endl;
+                }
+                else
+                {
+                    cout << "Category: Obese" << endl;
+                }
+            }
+        }
+        else if (choice == 5)
+        {
+            cout << "\n--- Stopwatch ---\n";
+            cout << "Press Enter to start the stopwatch.";
+
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.get();
+
+            time_t startTime = time(0);
+
+            cout << "Stopwatch started. Press Enter to stop.";
+            cin.get();
+
+            time_t endTime = time(0);
+            double seconds = difftime(endTime, startTime);
+
+            cout << "Elapsed time: " << seconds << " seconds" << endl;
+        }
+        else if (choice == 6)
         {
             cout << "\nThanks for using the program!" << endl;
         }
